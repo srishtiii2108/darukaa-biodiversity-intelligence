@@ -1,6 +1,6 @@
 import { Paperclip, ArrowUp } from 'lucide-react';
 
-export default function ChatInput({ input, setInput, onSendMessage, disabled }) {
+export default function ChatInput({ input, setInput, onSendMessage, disabled, onOpenUpload }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (input.trim() && !disabled) {
@@ -21,7 +21,12 @@ export default function ChatInput({ input, setInput, onSendMessage, disabled }) 
         onSubmit={handleSubmit}
         className="relative flex items-center w-full bg-white border border-darukaa-border rounded-full shadow-sm px-2 py-2 focus-within:border-darukaa-green/30 focus-within:shadow-subtle transition-all"
       >
-        <button type="button" className="p-3 text-darukaa-muted hover:text-darukaa-text transition-colors shrink-0">
+        {/* Paperclip Button is now active! */}
+        <button 
+          type="button" 
+          onClick={onOpenUpload}
+          className="p-3 text-darukaa-muted hover:text-darukaa-text hover:bg-gray-50 rounded-full transition-colors shrink-0"
+        >
           <Paperclip className="w-4 h-4" />
         </button>
         

@@ -3,16 +3,14 @@ import HeroState from './HeroState';
 import ChatInput from './ChatInput';
 import MessageBubble from './MessageBubble';
 import RecommendationCard from '../Recommendation/RecommendationCard';
-import { getSessionId } from '../../utils/session';
 import { sendChatMessage } from '../../services/api';
 
-export default function ChatWorkspace({ onContextUpdate }) {
+export default function ChatWorkspace({ sessionId, onContextUpdate, onOpenUpload }) {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
 
-  // Auto-scroll to bottom
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -23,23 +21,18 @@ export default function ChatWorkspace({ onContextUpdate }) {
   };
 
   const handleSendMessage = async (userMessage) => {
-    // 1. Add User Message to UI instantly
     const newMsg = { role: 'user', content: userMessage };
     setMessages((prev) => [...prev, newMsg]);
     setIsLoading(true);
     setInput('');
 
     try {
-      // 2. Call FastAPI Backend
-      const sessionId = getSessionId();
       const data = await sendChatMessage(sessionId, userMessage);
 
-      // 3. Update Sidebar Context (Send data to App.jsx)
       if (data && data.updated_context) {
         onContextUpdate(data.updated_context);
       }
 
-      // 4. Add AI Message to UI (with fallbacks to prevent undefined content)
       setMessages((prev) => [
         ...prev,
         { 
@@ -75,7 +68,6 @@ export default function ChatWorkspace({ onContextUpdate }) {
               )
             ))}
             
-            {/* Thinking / Loading State */}
             {isLoading && (
               <div className="flex w-full justify-start mb-6 px-6">
                 <div className="flex gap-4 max-w-[850px] w-full mx-auto">
@@ -99,6 +91,7 @@ export default function ChatWorkspace({ onContextUpdate }) {
           setInput={setInput} 
           onSendMessage={handleSendMessage} 
           disabled={isLoading} 
+          onOpenUpload={onOpenUpload}
         />
       </div>
     </div>
