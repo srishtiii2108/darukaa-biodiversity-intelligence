@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-from typing import Optional
+from typing import Optional, List, Dict
 
 class SoilHealth(BaseModel):
     ph: Optional[float] = Field(None, description="Soil pH level")
@@ -11,16 +11,26 @@ class Climate(BaseModel):
     rainfall_pattern: Optional[str] = Field(None, description="e.g., low, heavy, seasonal")
 
 class EnvironmentalContext(BaseModel):
-    soil_health: Optional[SoilHealth] = Field(default_factory=SoilHealth)
-    climate: Optional[Climate] = Field(default_factory=Climate)
+    soil_health: SoilHealth = Field(default_factory=SoilHealth)
+    climate: Climate = Field(default_factory=Climate)
     land_use: Optional[str] = Field(None, description="e.g., monoculture wheat, agroforestry")
     region: Optional[str] = Field(None, description="e.g., semi-arid, tropical")
-    biodiversity_status: Optional[str] = Field(None, description="e.g., declining, stable")
+
+# Schema for the LLM to strictly output extracted facts
+class ExtractedContext(BaseModel):
+    soil_ph: Optional[float] = None
+    soil_organic_carbon_percent: Optional[float] = None
+    soil_moisture_level: Optional[str] = None
+    climate_temperature_celsius: Optional[float] = None
+    climate_rainfall_pattern: Optional[str] = None
+    land_use: Optional[str] = None
+    region: Optional[str] = None
 
 class ChatRequest(BaseModel):
+    session_id: str = Field(..., description="Unique ID for the conversation session")
     user_message: str
-    context: Optional[EnvironmentalContext] = Field(default_factory=EnvironmentalContext)
-    
+
 class ChatResponse(BaseModel):
     reply: str
-    updated_context: EnvironmentalContext
+    updated_context: dict
+    is_recommendation: bool

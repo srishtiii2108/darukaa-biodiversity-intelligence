@@ -5,3 +5,5 @@ chromadb==0.4.24
 python-dotenv==1.0.1
 numpy<2.0
 cohere
+PyPDF2==3.0.1
+langchain-text-splitters==0.0.1

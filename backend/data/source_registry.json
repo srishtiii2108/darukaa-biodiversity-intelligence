@@ -1,0 +1,29 @@
+{
+  "fao_soils_2021": {
+    "title": "Recarbonizing Global Soils",
+    "organization": "FAO",
+    "year": 2021,
+    "document_type": "technical_manual",
+    "topics": ["soil_health", "soil_carbon", "agriculture"],
+    "metrics": ["soil_organic_carbon", "soil_moisture"],
+    "url": "https://www.fao.org/3/cb6378en/cb6378en.pdf"
+  },
+  "ipcc_climate_land_2019": {
+    "title": "Climate Change and Land",
+    "organization": "IPCC",
+    "year": 2019,
+    "document_type": "special_report",
+    "topics": ["climate", "land_degradation", "water"],
+    "metrics": ["rainfall_pattern", "soil_moisture"],
+    "url": "https://www.ipcc.ch/srccl/"
+  },
+  "unep_peace_nature_2021": {
+    "title": "Making Peace with Nature",
+    "organization": "UNEP",
+    "year": 2021,
+    "document_type": "scientific_blueprint",
+    "topics": ["pollution", "deforestation", "biodiversity"],
+    "metrics": ["soil_ph", "species_richness"],
+    "url": "https://www.unep.org/resources/making-peace-nature"
+  }
+}
