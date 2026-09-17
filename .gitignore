@@ -1,0 +1,13 @@
+# Environments
+backend/venv/
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# Vector DB
+backend/chroma_db/
+
+# OS
+.DS_Store
