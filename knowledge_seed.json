@@ -1,0 +1,32 @@
+[
+  {
+    "topic": "Agroforestry & Soil Carbon",
+    "source": "FAO Studies on Semi-Arid Ecosystems",
+    "fact": "In semi-arid regions with low rainfall and a history of monoculture, introducing agroforestry (integrating trees with crops) increases soil organic carbon by 15-25% over 3-5 years. The tree roots break hardpan soils, improving water retention and creating microhabitats that directly boost habitat diversity and microbial survival."
+  },
+  {
+    "topic": "Cover Crops & Soil Health",
+    "source": "Global Biodiversity Assessment Report",
+    "fact": "Planting legume-based cover crops in soils with low organic carbon and poor pH balance enhances nitrogen fixation without synthetic fertilizers. This intervention improves microbial diversity and supports local pollinator populations, showing measurable biodiversity recovery in the short to medium term (1-2 years)."
+  },
+  {
+    "topic": "Water Management & Habitat",
+    "source": "IPCC Climate Resilience Guidelines",
+    "fact": "For landscapes suffering from low soil moisture and declining species richness, constructing micro-catchments and contour trenches slows surface runoff. This increases local soil moisture retention by up to 40%, directly enabling the survival of native drought-resistant plant species and reducing habitat fragmentation."
+  },
+  {
+    "topic": "Crop Rotation & Pest Resistance",
+    "source": "UNEP Sustainable Agriculture Report",
+    "fact": "Transitioning from monoculture wheat to a diversified mixed-cropping system reduces pest accumulation and improves soil structural integrity. This practice supports a wider variety of ecological niches, leading to a natural stabilization of declining biodiversity statuses within a medium-term horizon of 2-4 years."
+  },
+  {
+    "topic": "Deforestation & Soil Erosion",
+    "source": "World Resources Institute Forest Report",
+    "fact": "In tropical regions, heavy rainfall combined with recent deforestation leads to severe topsoil erosion, rapidly depleting soil organic carbon. Implementing immediate reforestation with native pioneer species stabilizes the soil matrix and restores the fragmented habitat, preventing further species decline over a 5-10 year horizon."
+  },
+  {
+    "topic": "Chemical Pollution & Microbes",
+    "source": "Journal of Environmental Quality",
+    "fact": "High levels of synthetic pesticide pollution in agricultural land drastically reduce soil microbial diversity and alter soil pH. Remediating this by shifting to organic integrated pest management (IPM) alongside biochar application neutralizes pH and provides carbon structures for microbial recolonization, showing ecosystem recovery in 2-3 years."
+  }
+]
