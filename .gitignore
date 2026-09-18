@@ -6,8 +6,5 @@ backend/venv/
 __pycache__/
 *.pyc
 
-# Vector DB
-backend/chroma_db/
-
 # OS
 .DS_Store
