@@ -7,3 +7,4 @@ numpy<2.0
 cohere
 PyPDF2==3.0.1
 langchain-text-splitters==0.0.1
+python-multipart
