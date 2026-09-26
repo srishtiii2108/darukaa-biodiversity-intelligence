@@ -342,7 +342,7 @@ npm run dev
 
 <div align="center">
   <p style="font-size: 12px; color: #999;">
-    Licensed under the <b>MIT License</b>. Copyright © 2026 Darukaa AI Scientist | Akshat Sharma.
+    Licensed under the <b>MIT License</b>. Copyright © 2026 Darukaa AI Scientist | Srishti Anand
   </p>
 </div>
 <br />
